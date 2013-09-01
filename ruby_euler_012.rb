@@ -2,9 +2,10 @@
 
 def count_divisors(n)
 	result = Array.new
-	n.downto(1) do |x|
+	1.upto(Math.sqrt(n)) do |x|
 		if n % x == 0
 			result << x
+			result << n / x
 		end
 	end		
 	result.count
